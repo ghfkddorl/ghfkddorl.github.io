@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>this is home index on My New Hugo Site</title>
-    <link>https://ghfkddorl.github.io/</link>
-    <description>Recent content in this is home index on My New Hugo Site</description>
+    <title>this is index on My New Hugo Site</title>
+    <link>https://ghfkddorl.github.io/tests/</link>
+    <description>Recent content in this is index on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Apr 2019 04:22:03 +0900</lastBuildDate>
     
-	<atom:link href="https://ghfkddorl.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ghfkddorl.github.io/tests/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
