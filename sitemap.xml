@@ -3,17 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ghfkddorl.github.io/tests/ifself/1/</loc>
-    <lastmod>2019-04-02T04:22:03+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ghfkddorl.github.io/tests/page/</loc>
-    <lastmod>2019-04-02T03:29:27+09:00</lastmod>
+    <loc>https://ghfkddorl.github.io/test/a/</loc>
+    <lastmod>2019-04-02T05:32:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ghfkddorl.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ghfkddorl.github.io/</loc>
+    <lastmod>2019-04-02T05:32:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -23,21 +24,9 @@
   </url>
   
   <url>
-    <loc>https://ghfkddorl.github.io/tests/test2/untitled15/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ghfkddorl.github.io/tests/test1/untitled15/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ghfkddorl.github.io/</loc>
-    <lastmod>2019-04-02T04:22:03+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ghfkddorl.github.io/tests/</loc>
-    <lastmod>2019-04-02T04:22:03+09:00</lastmod>
+    <loc>https://ghfkddorl.github.io/test/</loc>
+    <lastmod>2019-04-02T05:32:00+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
