@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+	<head>
+		<title>마크다운 : 수식 넣기 //  &lt; 프로그래밍 일기장 &gt; </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		<link rel="stylesheet" href="https://ghfkddorl.github.io/css/main.min.5727d71b28c5181ab39a55314ff63e7b717b9eb8f492f73053fa5416e0a054c0.css" />
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		MathJax.Hub.Config({
+		  tex2jax: {
+			inlineMath: [['$','$'], ['\\(','\\)']],
+			displayMath: [['$$','$$'], ['\[','\]']],
+			processEscapes: true,
+			processEnvironments: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+			ignoreClass: ["gist-file"],
+			TeX: { equationNumbers: { autoNumber: "AMS" },
+				 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+		  }
+		});
+		</script>
+
+		<script>
+			function toggle(id) {
+				style = document.getElementById(id).style
+				if ( style.display == "block" ) { style.display = "none" }
+				else { style.display = "block" }
+			}
+
+			function ctrl_header(event){
+				header = document.getElementById("app-header")
+				scroll_down = (0 <= event.deltaY)
+			}
+			
+			var __opened_menu__
+			function open_sub_menu(menu_item, title){
+				menu = document.getElementById("sub-menu-id-" + title);
+				style = menu.style
+				if ( __opened_menu__ ) {
+					if ( __opened_menu__ == menu ) {
+						if ( style.display == 'none' ) {
+							style.display = 'block'
+						} else {
+							style.display = 'none'
+						}
+					} else {
+						__opened_menu__.style.display = 'none';
+						style.display = 'block';
+						__opened_menu__ = menu;
+					}
+				} else {
+					style.display = 'block';
+					__opened_menu__ = menu;
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<header id="app-header">
+
+			<div class="menu-btn"
+				onclick="toggle(&quot;app-menu&quot;)">
+				<img class="icon" src="../../img/menu.png">
+			</div>
+
+			<img class="profile-icon" src="../../img/profile.jpg"/>
+			<div class="profile-text"> &lt; 프로그래밍 일기장 &gt; </div>
+		</header>
+
+		<div id="app-menu">
+		<div class="root-menu">
+		
+
+			<div class="item" onclick="open_sub_menu(this, &#34;Hugo&#34;)">
+
+			<div class="text">Hugo</div>
+				
+			</div>
+
+			<div class="menu" id="sub-menu-id-Hugo">
+			
+
+				<a class="item" href=../../hugo/post1/>
+					<div class="text">마크마운 : 코드 넣기</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=../../hugo/post2/>
+					<div class="text">마크다운 : 수식 넣기</div>
+					
+				</a>
+
+			
+			</div>
+
+
+			
+
+			<div class="item" onclick="open_sub_menu(this, &#34;Python&#34;)">
+
+			<div class="text">Python</div>
+				
+			</div>
+
+			<div class="menu" id="sub-menu-id-Python">
+			
+
+				<a class="item" href=../../python/post2/>
+					<div class="text">반복문을 직관적으로(2)</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=../../python/post3/>
+					<div class="text">반복문을 직관적으로(3)</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=../../python/post1/>
+					<div class="text">반복문을 직관적으로(1)</div>
+					
+				</a>
+
+			
+			</div>
+
+
+			
+			</div>
+			</div>
+
+		<main id="app-content">
+			<div class="content-wrap">
+			
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">마크다운 : 수식 넣기</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 1, 0001
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>수학적 수식을 표현하기 위해 라텍스(Latex)를 주로 사용합니다.
+그리고 Html 에서 라텍스를 쓸 수 있게 해주는 Mathjax 라이브러리가 있습니다.
+사용 방법을 일반적인 자바스크립트 라이브러리와 같습니다.</p>
+
+<p>우선 Mathjax 자바스크립트 라이브러리를 설치합니다.
+다음과 같이 script 태그를 산입하여 CDN으로 부터 Mathjax 라이브러리를 가져옵니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
+<p>MathJax 라이브러리가 <code>$ $</code>로 <code>\\( )\\</code>로 둘러싸인 코드를 Latex 인라인 모드로
+<code>$$ $$</code> <code>\[ \]</code>로 둘러싸인 코드를 Latex 디스플레이 모드로 인식하도록 설정합니다.
+또한 code, pre, style, script 같은 태그 안에서 <code>$</code> <code>\\( )\\</code> <code>\[ \]</code> 기호를
+사용할 수 있도록 <code>skipTags</code> 를 설정해 줍니다.
+gist를 사용한다면 <code>ignoreClass</code> 를 설정해 줍니다.
+<a href="https://www.mathjax.org/">MathJax</a> 에서 더 자세한 사항을 확인할 수 있습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/x-mathjax-config&#34;</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2</span><span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Config</span>({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3</span>  <span style="color:#a6e22e">tex2jax</span><span style="color:#f92672">:</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span>    <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>,<span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>,<span style="color:#e6db74">&#39;\\)&#39;</span>]],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span>    <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$$&#39;</span>,<span style="color:#e6db74">&#39;$$&#39;</span>], [<span style="color:#e6db74">&#39;\[&#39;</span>,<span style="color:#e6db74">&#39;\]&#39;</span>]],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6</span>    <span style="color:#a6e22e">processEscapes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span>    <span style="color:#a6e22e">processEnvironments</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span>    <span style="color:#a6e22e">skipTags</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;script&#39;</span>, <span style="color:#e6db74">&#39;noscript&#39;</span>, <span style="color:#e6db74">&#39;style&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>, <span style="color:#e6db74">&#39;pre&#39;</span>, <span style="color:#e6db74">&#39;code&#39;</span>],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span>	<span style="color:#a6e22e">ignoreClass</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;gist-file&#34;</span>],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span>    <span style="color:#a6e22e">TeX</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">equationNumbers</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">autoNumber</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;AMS&#34;</span> },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span>         <span style="color:#a6e22e">extensions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;AMSmath.js&#34;</span>, <span style="color:#e6db74">&#34;AMSsymbols.js&#34;</span>] }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13</span>});
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14</span>&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>인라인 모드 : $\phi\frac{a}{\sqrt{a^2+b^2}}$<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#960050;background-color:#1e0010"></span>디스플레이 모드 : $$\phi\frac{a}{\sqrt{a^2+b^2}}$$</code></pre></div>
+<div>
+인라인 모드 : $\phi\frac{a}{\sqrt{a^2+b^2}}$
+디스플레이 모드 : $$\phi\frac{a}{\sqrt{a^2+b^2}}$$
+</div>
+
+<p>그 후 마크다운에서 라텍스 코드를 사용하면 위와 같이 수학기호가 깨끗이 그려집니다.
+휴고를 사용하신다면, 그때 그때 입력할 필요 없이 baseof.html에 코드를 산입해도
+됩니다.</p>
+
+    </div>
+  </article>
+
+
+			</div>
+		</main>
+	</body>
+
+</html>

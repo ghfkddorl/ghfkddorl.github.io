@@ -1,37 +1,198 @@
 <!doctype html>
 <html>
-  <head>
-    <title>My New Hugo Site</title>
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.54.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <base href="https://ghfkddorl.github.io/" />
-    <link rel="stylesheet" href="https://ghfkddorl.github.io/css/main.min.ed2bee65dbc2f611ff1a2ca5cfa6d7ec362a8e79fea5cf61bb5213445359e232.css" />
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://ghfkddorl.github.io/"><img class="app-header-avatar" src="./avatar.jpg" /></a>
-      <h1>My New Hugo Site</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-      <div class="app-header-social">
-        
-      </div>
-    </header>
-    <main class="app-container">
-      
+	<head>
+	<meta name="generator" content="Hugo 0.54.0" />
+		<title> &lt; 프로그래밍 일기장 &gt; </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		<link rel="stylesheet" href="https://ghfkddorl.github.io/css/main.min.5727d71b28c5181ab39a55314ff63e7b717b9eb8f492f73053fa5416e0a054c0.css" />
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		MathJax.Hub.Config({
+		  tex2jax: {
+			inlineMath: [['$','$'], ['\\(','\\)']],
+			displayMath: [['$$','$$'], ['\[','\]']],
+			processEscapes: true,
+			processEnvironments: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+			ignoreClass: ["gist-file"],
+			TeX: { equationNumbers: { autoNumber: "AMS" },
+				 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+		  }
+		});
+		</script>
+
+		<script>
+			function toggle(id) {
+				style = document.getElementById(id).style
+				if ( style.display == "block" ) { style.display = "none" }
+				else { style.display = "block" }
+			}
+
+			function ctrl_header(event){
+				header = document.getElementById("app-header")
+				scroll_down = (0 <= event.deltaY)
+			}
+			
+			var __opened_menu__
+			function open_sub_menu(menu_item, title){
+				menu = document.getElementById("sub-menu-id-" + title);
+				style = menu.style
+				if ( __opened_menu__ ) {
+					if ( __opened_menu__ == menu ) {
+						if ( style.display == 'none' ) {
+							style.display = 'block'
+						} else {
+							style.display = 'none'
+						}
+					} else {
+						__opened_menu__.style.display = 'none';
+						style.display = 'block';
+						__opened_menu__ = menu;
+					}
+				} else {
+					style.display = 'block';
+					__opened_menu__ = menu;
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<header id="app-header">
+
+			<div class="menu-btn"
+				onclick="toggle(&quot;app-menu&quot;)">
+				<img class="icon" src="./img/menu.png">
+			</div>
+
+			<img class="profile-icon" src="./img/profile.jpg"/>
+			<div class="profile-text"> &lt; 프로그래밍 일기장 &gt; </div>
+		</header>
+
+		<div id="app-menu">
+		<div class="root-menu">
+		
+
+			<div class="item" onclick="open_sub_menu(this, &#34;Hugo&#34;)">
+
+			<div class="text">Hugo</div>
+				
+			</div>
+
+			<div class="menu" id="sub-menu-id-Hugo">
+			
+
+				<a class="item" href=./hugo/post1/>
+					<div class="text">마크마운 : 코드 넣기</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=./hugo/post2/>
+					<div class="text">마크다운 : 수식 넣기</div>
+					
+				</a>
+
+			
+			</div>
+
+
+			
+
+			<div class="item" onclick="open_sub_menu(this, &#34;Python&#34;)">
+
+			<div class="text">Python</div>
+				
+			</div>
+
+			<div class="menu" id="sub-menu-id-Python">
+			
+
+				<a class="item" href=./python/post2/>
+					<div class="text">반복문을 직관적으로(2)</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=./python/post3/>
+					<div class="text">반복문을 직관적으로(3)</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=./python/post1/>
+					<div class="text">반복문을 직관적으로(1)</div>
+					
+				</a>
+
+			
+			</div>
+
+
+			
+			</div>
+			</div>
+
+		<main id="app-content">
+			<div class="content-wrap">
+			
   <article>
-    <h1>My New Hugo Site</h1>
+    <h1>content root</h1>
     <ul class="posts-list">
       
         <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://ghfkddorl.github.io/test/a/">A</a>
+          <a class="posts-list-item-title" href="https://ghfkddorl.github.io/python/post2/">반복문을 직관적으로(2)</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 4 min read -
+            Apr 6, 2019
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://ghfkddorl.github.io/python/post3/">반복문을 직관적으로(3)</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 4 min read -
+            Apr 6, 2019
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://ghfkddorl.github.io/python/post1/">반복문을 직관적으로(1)</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 3 min read -
+            Apr 6, 2019
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://ghfkddorl.github.io/hugo/post1/">마크마운 : 코드 넣기</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 4 min read -
+            Apr 1, 2019
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://ghfkddorl.github.io/hugo/post2/">마크다운 : 수식 넣기</a>
           <span class="posts-list-item-description">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg> 1 min read -
-            Apr 2, 2019
+            Jan 1, 0001
           </span>
         </li>
       
@@ -42,6 +203,8 @@
 
   </article>
 
-    </main>
-  </body>
+			</div>
+		</main>
+	</body>
+
 </html>

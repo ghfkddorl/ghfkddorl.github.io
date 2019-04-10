@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+	<head>
+		<title>마크마운 : 코드 넣기 //  &lt; 프로그래밍 일기장 &gt; </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		<link rel="stylesheet" href="https://ghfkddorl.github.io/css/main.min.5727d71b28c5181ab39a55314ff63e7b717b9eb8f492f73053fa5416e0a054c0.css" />
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		MathJax.Hub.Config({
+		  tex2jax: {
+			inlineMath: [['$','$'], ['\\(','\\)']],
+			displayMath: [['$$','$$'], ['\[','\]']],
+			processEscapes: true,
+			processEnvironments: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+			ignoreClass: ["gist-file"],
+			TeX: { equationNumbers: { autoNumber: "AMS" },
+				 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+		  }
+		});
+		</script>
+
+		<script>
+			function toggle(id) {
+				style = document.getElementById(id).style
+				if ( style.display == "block" ) { style.display = "none" }
+				else { style.display = "block" }
+			}
+
+			function ctrl_header(event){
+				header = document.getElementById("app-header")
+				scroll_down = (0 <= event.deltaY)
+			}
+			
+			var __opened_menu__
+			function open_sub_menu(menu_item, title){
+				menu = document.getElementById("sub-menu-id-" + title);
+				style = menu.style
+				if ( __opened_menu__ ) {
+					if ( __opened_menu__ == menu ) {
+						if ( style.display == 'none' ) {
+							style.display = 'block'
+						} else {
+							style.display = 'none'
+						}
+					} else {
+						__opened_menu__.style.display = 'none';
+						style.display = 'block';
+						__opened_menu__ = menu;
+					}
+				} else {
+					style.display = 'block';
+					__opened_menu__ = menu;
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<header id="app-header">
+
+			<div class="menu-btn"
+				onclick="toggle(&quot;app-menu&quot;)">
+				<img class="icon" src="../../img/menu.png">
+			</div>
+
+			<img class="profile-icon" src="../../img/profile.jpg"/>
+			<div class="profile-text"> &lt; 프로그래밍 일기장 &gt; </div>
+		</header>
+
+		<div id="app-menu">
+		<div class="root-menu">
+		
+
+			<div class="item" onclick="open_sub_menu(this, &#34;Hugo&#34;)">
+
+			<div class="text">Hugo</div>
+				
+			</div>
+
+			<div class="menu" id="sub-menu-id-Hugo">
+			
+
+				<a class="item" href=../../hugo/post1/>
+					<div class="text">마크마운 : 코드 넣기</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=../../hugo/post2/>
+					<div class="text">마크다운 : 수식 넣기</div>
+					
+				</a>
+
+			
+			</div>
+
+
+			
+
+			<div class="item" onclick="open_sub_menu(this, &#34;Python&#34;)">
+
+			<div class="text">Python</div>
+				
+			</div>
+
+			<div class="menu" id="sub-menu-id-Python">
+			
+
+				<a class="item" href=../../python/post2/>
+					<div class="text">반복문을 직관적으로(2)</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=../../python/post3/>
+					<div class="text">반복문을 직관적으로(3)</div>
+					
+				</a>
+
+			
+
+				<a class="item" href=../../python/post1/>
+					<div class="text">반복문을 직관적으로(1)</div>
+					
+				</a>
+
+			
+			</div>
+
+
+			
+			</div>
+			</div>
+
+		<main id="app-content">
+			<div class="content-wrap">
+			
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">마크마운 : 코드 넣기</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 1, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          4 min read
+        </div></div>
+    </header>
+
+    
+    <div class="post-content">
+      
+
+<h2 id="1-코드-울타리와-인라인-코드">1. 코드 울타리와 인라인 코드</h2>
+
+<p>code =</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>[comment]: # (this is markdown)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#e6db74">```python
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3</span><span style="color:#e6db74"></span><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4</span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5</span>x, y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>, (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">100</span>))
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6</span>plt<span style="color:#f92672">.</span>scatter(x, y)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7</span>plt<span style="color:#f92672">.</span>show()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8</span><span style="color:#e6db74">```</span></code></pre></div>
+<p>result =</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3</span>x, y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>, (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">100</span>))
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4</span>plt<span style="color:#f92672">.</span>scatter(x, y)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5</span>plt<span style="color:#f92672">.</span>show()</code></pre></div>
+<p>코드 울타리(code fences) 는 위와 같이 코드를 둘러싸는 3개 이상의 연속된
+역따옴표를 말합니다(*따옴표가 아닙니다.).
+마크다운에서 이렇게 둘러싸인 영역 안에 있는 텍스트는 코드로 인식됩니다.
+휴고는 코드 울타리로 둘러싸인 코드를 html로 렌더링 하고,
+문법강조를 하기위한 방법으로 <a href="http://pygments.org/">Pygments</a> 를 지원합니다.
+우선 아래와 같이 싸이트의 설정파일에 <code>pygmentsCodeFences = true</code>를 추가 합니다.
+<code>pygemtsStyle</code>로 문법강조 스타일을 정합니다.
+<code>pygemntsOptions</code>는 설정파일에서 지원해 주지 않는 Pygments
+옵션 값을 지원해 주기 위해 사용됩니다.
+문자열을 값으로 받으며 문자열은 쉼표로 구분되는 키-값쌍의 연속으로 이루어집니다.
+코드에 줄번호를 표시해 주기위해 inlinenos 옵션을 설정해 줍니다.
+<code>False</code> <code>'table'</code> <code>'inline'</code> 값이 가능하며 렌더링되는 태그들의 구조를 결정합니다.
+기본값은 <code>False</code>이며 줄번호를 만들지 않습니다. Pygments 에서 지원하는 모든 옵션은 <a href="http://pygments.org/docs/formatters/#HtmlFormatter">여기서</a> 찾아 볼 수 있습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#75715e"># config.toml</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#a6e22e">pygmentsCodeFences</span>=<span style="color:#66d9ef">true</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3</span><span style="color:#a6e22e">pygmentsStyle</span>=<span style="color:#e6db74">&#34;monokai&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4</span><span style="color:#a6e22e">pygmentsOptions</span>=<span style="color:#e6db74">&#34;linenos=inline&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5</span><span style="color:#75715e"># pygmentsOptions=&#34;key1=value1, key2=value2, ...&#34;</span></code></pre></div>
+<p>그렇다면 마크다운에서 코드 울타리를 렌더링 하려면 어떻게 해야 할까요.
+마크 다운 안에서 코드 울타리는 코드로 인식하기 위한 특수 문자로 인식되어
+렌더링이 되지 않습니다. 이러한 규칙을 무시하기 위한 규칙을
+이스케이핑 룰(escaping rule) 이라고 합니다.
+코드 울타리의 이스케이핑 룰은 간단합니다.
+자신보다 긴 울타리 안에 있는 코드울타리는 텍스트로 인식됩니다.</p>
+
+<p>code =</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>```` markdown<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#960050;background-color:#1e0010"></span>``` python<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3</span><span style="color:#960050;background-color:#1e0010"></span>import numpy as np<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4</span><span style="color:#960050;background-color:#1e0010"></span>```<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5</span><span style="color:#960050;background-color:#1e0010"></span>````</code></pre></div>
+<p>result =</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>``` python<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#960050;background-color:#1e0010"></span>import numpy as np<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3</span><span style="color:#960050;background-color:#1e0010"></span>```</code></pre></div>
+<p>코드를 글 사이에 넣고 싶을 때는 인라인 코드를 사용하면 됩니다.
+역따옴표가 두 개 이하이면 둘러싸인 텍스트는 인라인 코드(inline code)로 인식됩니다
+(개인적으로 한줄코드라고 부릅니다.).
+<code>inline code</code> 를 렌더링 하려면 <code>`inline code`</code> 을 입력합니다.
+이스케이핑 룰은 코드 울타리와 같습니다.
+<code>`inline code2`</code> 를 렌더링 하려면 아래와 같이 입력합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>`` <span style="color:#e6db74">`inline code2 `</span>`</code></pre></div>
+<h2 id="2-숏코드-shortcode">2. 숏코드(ShortCode)</h2>
+
+<p>마크다운 자체가 긴 html 코드를 짧게 표현할 수 있게 해주지만,
+마크다운으로 짧게 하기 힘든 html 코드가 있습니다.
+휴고는 이러한 코드도 짥게 표현할 수 있도록 숏코드 기능을 제공합니다.
+숏코드는 html을 렌더링하는 방법을 직접 지정할 수 있게 해주는 일종의 함수 입니다.
+숏코드는 <code>{{&lt; &gt;}}</code> 혹은 <code>{{% %}}</code>를 태그처럼 사용하며.
+아래와 같은 형식을 따릅니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>{{&lt; function arg1 arg2 arg3... / &gt;}}` inner_var `{{&lt;/* /function &gt;}}</code></pre></div>
+<p>이 중 문법강조를 지원해주는 <code>highlight</code> 숏코드가 있습니다.
+첫번째 전달값으로 코드의 언어를 전달해주고
+두번째 전달값으로 Pygments의 옵션값을 문자열로 전달해 줍니다.
+문자열은 쉼표로 구분되는 키-값쌍의 연속으로 이루어집니다.
+현재 highlight 숏코드는 <a href="https://github.com/alecthomas/chroma">Chroma</a>를 이용합니다. Pygments를 이용하고 싶다면
+설정파일에 <code>pygmentsUseClassic=true</code> 를 입력합니다. Chroma는 Pygments와 같은
+옵션값을 사용하기 때문에 옵션값을 바꿀 필요는 없습니다.</p>
+
+<p>코드 울타리에 비해 가지는 장점은 코드마다 다른 스타일을 지정해 줄수 있다는
+점과 줄강조가 가능하다는 점 입니다. 코드 울타리는 Pygments 옵션이 싸이트 안의
+모든 코드에 일괄적으로 적용되기 때문에 줄강조가 사실상 무의미한 옵션입니다.</p>
+
+<p>code =
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>{{&lt; highlight python &#34;linenos=inline, hl_lines=3, linenostart=199, style=monokai&#34; &gt;}}<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#960050;background-color:#1e0010"></span>import numpy as np<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3</span><span style="color:#960050;background-color:#1e0010"></span>import matplotlib.pyplot as plt<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4</span><span style="color:#960050;background-color:#1e0010"></span>x, y = np.random.normal(0.0, 1.0, (2, 100))<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5</span><span style="color:#960050;background-color:#1e0010"></span>plt.scatter(x, y)<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6</span><span style="color:#960050;background-color:#1e0010"></span>plt.show()<span style="color:#960050;background-color:#1e0010">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7</span><span style="color:#960050;background-color:#1e0010"></span>{{&lt; /highlight &gt;}}</code></pre></div></p>
+
+<p>result =
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">199</span><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">200</span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">201</span>x, y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>, (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">100</span>))
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">202</span>plt<span style="color:#f92672">.</span>scatter(x, y)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">203</span>plt<span style="color:#f92672">.</span>show()</code></pre></div></p>
+
+<p>숏코드의 이스케이핑 룰은 다음과 같습니다.
+<code>{{&lt; &gt;}}</code>를 렌더링 하기위해 <code>{{&lt;/* */&gt;}}</code> 을 입력하고
+<code>{{% %}}</code>를 렌더링 하기 위해 <code>{{%/* */%}}</code> 을 입력합니다.</p>
+
+<h2 id="3-gist">3. Gist</h2>
+
+<p>Gist를 사용할 경우, gits 숏코드를 이용해 gist 에 저장된 코드를
+불러올 수 있습니다. 코드의 url이 다음과 같을 때 아래와 같이 입력합니다.</p>
+
+<p><a href="https://gist.github.com/ghfkddorl/7c068741f0a7ea293d2db2b677b8a1fa/">https://gist.github.com/ghfkddorl/7c068741f0a7ea293d2db2b677b8a1fa/</a></p>
+
+<p>code =</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>{{&lt; gist ghfkddorl 7c068741f0a7ea293d2db2b677b8a1fa &gt;}}</code></pre></div>
+<p>returl =
+<script type="application/javascript" src="//gist.github.com/ghfkddorl/7c068741f0a7ea293d2db2b677b8a1fa.js"></script></p>
+
+<p>이는 아래와도 같습니다. 사실상 그리 큰 차이는 안나고,
+Ctrl-C Ctrl-V를 이용하면 그냥 <code>&lt;script&gt;</code> 태그를 사용하는 것이 더 빠른 것 같습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://gist.github.com/ghfkddorl/7c068741f0a7ea293d2db2b677b8a1fa/</span>&gt;</code></pre></div>
+<hr />
+
+<h2 id="a-pygments-스타일">A. Pygments 스타일</h2>
+
+<p>Pygmetns 에서 제공하는 스타일은 몇개를 나열해 봅니다.</p>
+
+<p><code>style=manni</code>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199</span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">numpy</span> <span style="color:#069;font-weight:bold">as</span> <span style="color:#0cf;font-weight:bold">np</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200</span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">matplotlib.pyplot</span> <span style="color:#069;font-weight:bold">as</span> <span style="color:#0cf;font-weight:bold">plt</span>
+<span style="display:block;width:100%;background-color:#d8dada"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201</span>x, y <span style="color:#555">=</span> np<span style="color:#555">.</span>random<span style="color:#555">.</span>normal(<span style="color:#f60">0.0</span>, <span style="color:#f60">1.0</span>, (<span style="color:#f60">2</span>, <span style="color:#f60">100</span>))
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202</span>plt<span style="color:#555">.</span>scatter(x, y)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203</span>plt<span style="color:#555">.</span>show()</code></pre></div></p>
+
+<p><code>style=default</code>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">199</span><span style="color:#fff;font-weight:bold">import</span> numpy <span style="color:#fff;font-weight:bold">as</span> np
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">200</span><span style="color:#fff;font-weight:bold">import</span> matplotlib.pyplot <span style="color:#fff;font-weight:bold">as</span> plt
+<span style="display:block;width:100%;background-color:#191919"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">201</span>x, y = np.random.normal(<span style="color:#ff0;font-weight:bold">0.0</span>, <span style="color:#ff0;font-weight:bold">1.0</span>, (<span style="color:#ff0;font-weight:bold">2</span>, <span style="color:#ff0;font-weight:bold">100</span>))
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">202</span>plt.scatter(x, y)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">203</span>plt.show()</code></pre></div></p>
+
+<p><code>style=fruity</code>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199</span><span style="color:#fb660a;font-weight:bold">import</span> numpy <span style="color:#fb660a;font-weight:bold">as</span> np
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200</span><span style="color:#fb660a;font-weight:bold">import</span> matplotlib.pyplot <span style="color:#fb660a;font-weight:bold">as</span> plt
+<span style="display:block;width:100%;background-color:#282828"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201</span>x, y = np.random.normal(<span style="color:#0086f7;font-weight:bold">0.0</span>, <span style="color:#0086f7;font-weight:bold">1.0</span>, (<span style="color:#0086f7;font-weight:bold">2</span>, <span style="color:#0086f7;font-weight:bold">100</span>))
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202</span>plt.scatter(x, y)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203</span>plt.show()</code></pre></div></p>
+
+<p><code>style=friendly</code>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199</span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200</span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">matplotlib.pyplot</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">plt</span>
+<span style="display:block;width:100%;background-color:#d8d8d8"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201</span>x, y <span style="color:#666">=</span> np<span style="color:#666">.</span>random<span style="color:#666">.</span>normal(<span style="color:#40a070">0.0</span>, <span style="color:#40a070">1.0</span>, (<span style="color:#40a070">2</span>, <span style="color:#40a070">100</span>))
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202</span>plt<span style="color:#666">.</span>scatter(x, y)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203</span>plt<span style="color:#666">.</span>show()</code></pre></div></p>
+
+<p><code>style=native</code>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">199</span><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">numpy</span> <span style="color:#6ab825;font-weight:bold">as</span> <span style="color:#447fcf;text-decoration:underline">np</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">200</span><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">matplotlib.pyplot</span> <span style="color:#6ab825;font-weight:bold">as</span> <span style="color:#447fcf;text-decoration:underline">plt</span>
+<span style="display:block;width:100%;background-color:#363636"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">201</span>x, y = np.random.normal(<span style="color:#3677a9">0.0</span>, <span style="color:#3677a9">1.0</span>, (<span style="color:#3677a9">2</span>, <span style="color:#3677a9">100</span>))
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">202</span>plt.scatter(x, y)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">203</span>plt.show()</code></pre></div></p>
+
+    </div>
+  </article>
+
+
+			</div>
+		</main>
+	</body>
+
+</html>

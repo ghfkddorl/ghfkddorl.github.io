@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on  &lt; 프로그래밍 일기장 &gt; </title>
+    <link>https://ghfkddorl.github.io/hugo/</link>
+    <description>Recent content in Hugo on  &lt; 프로그래밍 일기장 &gt; </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Apr 2019 01:36:37 +0900</lastBuildDate>
+    
+	<atom:link href="https://ghfkddorl.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>마크마운 : 코드 넣기</title>
+      <link>https://ghfkddorl.github.io/hugo/post1/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/hugo/post1/</guid>
+      <description>1. 코드 울타리와 인라인 코드 code = 1[comment]: # (this is markdown) 2```python 3import numpy as np 4import matplotlib.pyplot as plt 5x, y = np.random.normal(0.0, 1.0, (2, 100)) 6plt.scatter(x, y) 7plt.show() 8``` result = 1import numpy as np 2import matplotlib.pyplot as plt 3x, y = np.random.normal(0.0, 1.0, (2, 100)) 4plt.scatter(x, y) 5plt.show() 코드 울타리(code fences)</description>
+    </item>
+    
+    <item>
+      <title>마크다운 : 수식 넣기</title>
+      <link>https://ghfkddorl.github.io/hugo/post2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/hugo/post2/</guid>
+      <description>수학적 수식을 표현하기 위해 라텍스(Latex)를 주로 사용합니다. 그리고 Html 에서 라텍스를 쓸 수 있게 해주는 Mathjax 라이브러리가 있습니다. 사용 방법을 일반적인 자</description>
+    </item>
+    
+  </channel>
+</rss>
