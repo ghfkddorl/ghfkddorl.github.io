@@ -1,148 +1,89 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Tags //  &lt; 프로그래밍 일기장 &gt; </title>
+		<title>Tags //  [ 프로그래밍 일기장 ] </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="" />
-		<link rel="stylesheet" href="https://ghfkddorl.github.io/css/main.min.5727d71b28c5181ab39a55314ff63e7b717b9eb8f492f73053fa5416e0a054c0.css" />
-
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-		MathJax.Hub.Config({
-		  tex2jax: {
-			inlineMath: [['$','$'], ['\\(','\\)']],
-			displayMath: [['$$','$$'], ['\[','\]']],
-			processEscapes: true,
-			processEnvironments: true,
-			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-			ignoreClass: ["gist-file"],
-			TeX: { equationNumbers: { autoNumber: "AMS" },
-				 extensions: ["AMSmath.js", "AMSsymbols.js"] }
-		  }
-		});
-		</script>
-
-		<script>
-			function toggle(id) {
-				style = document.getElementById(id).style
-				if ( style.display == "block" ) { style.display = "none" }
-				else { style.display = "block" }
-			}
-
-			function ctrl_header(event){
-				header = document.getElementById("app-header")
-				scroll_down = (0 <= event.deltaY)
-			}
-			
-			var __opened_menu__
-			function open_sub_menu(menu_item, title){
-				menu = document.getElementById("sub-menu-id-" + title);
-				style = menu.style
-				if ( __opened_menu__ ) {
-					if ( __opened_menu__ == menu ) {
-						if ( style.display == 'none' ) {
-							style.display = 'block'
-						} else {
-							style.display = 'none'
-						}
-					} else {
-						__opened_menu__.style.display = 'none';
-						style.display = 'block';
-						__opened_menu__ = menu;
-					}
-				} else {
-					style.display = 'block';
-					__opened_menu__ = menu;
-				}
-
-			}
-		</script>
+		
+		
+		<link rel="stylesheet" href="https://ghfkddorl.github.io/css/main.css"/>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?delayStartupUntil=configured"></script>
+		<script type="text/javascript" src="https://ghfkddorl.github.io/js/main.js"></script>
 	</head>
 
-	<body>
-		<header id="app-header">
-
-			<div class="menu-btn"
-				onclick="toggle(&quot;app-menu&quot;)">
-				<img class="icon" src="../img/menu.png">
-			</div>
-
-			<img class="profile-icon" src="../img/profile.jpg"/>
-			<div class="profile-text"> &lt; 프로그래밍 일기장 &gt; </div>
-		</header>
-
-		<div id="app-menu">
-		<div class="root-menu">
-		
-
-			<div class="item" onclick="open_sub_menu(this, &#34;Hugo&#34;)">
-
-			<div class="text">Hugo</div>
-				
-			</div>
-
-			<div class="menu" id="sub-menu-id-Hugo">
+	<body onload="onload()">
+		<div id="app-sidebtn"
+			onclick="openSidebar()">
+			~$ tree content
+		</div>
+		<aside id="app-sidebar">
 			
+<header>
+	<div class="icon-wrap" onclick="closeSidebar()">
+	<div class="icon svg-ajax" id="icon-close">/img/close.svg</div>
+	</div>
+	~ $ tree content
+</header>
 
-				<a class="item" href=../hugo/post1/>
-					<div class="text">마크마운 : 코드 넣기</div>
-					
-				</a>
+<div class="menu-wrap">
+<ul class="menu">
+	<li class="item"> Django</li>
+	<ul class="sub-menu"></ul>
 
-			
+	<li class="item"> Hugo And Blog</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/003_html_md_%EB%A6%AC%EC%86%8C%EC%8A%A4%EB%A1%9C/> HTML MD 파일은 리소스로 사용하기</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/001_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%BD%94%EB%93%9C%EB%84%A3%EA%B8%B0/post1/> 마크마운 : 코드 넣기</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/002_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%88%98%EC%8B%9D%EB%84%A3%EA%B8%B0/> 마크다운 : 수식 넣기</a></li>
+	</ul>
 
-				<a class="item" href=../hugo/post2/>
-					<div class="text">마크다운 : 수식 넣기</div>
-					
-				</a>
+	<li class="item"> ML</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_machine_learning/001_gd/> 제약이 있는 경사하강법</a></li>
+	</ul>
 
-			
-			</div>
-
-
-			
-
-			<div class="item" onclick="open_sub_menu(this, &#34;Python&#34;)">
-
-			<div class="text">Python</div>
-				
-			</div>
-
-			<div class="menu" id="sub-menu-id-Python">
-			
-
-				<a class="item" href=../python/post2/>
-					<div class="text">반복문을 직관적으로(2)</div>
-					
-				</a>
-
-			
-
-				<a class="item" href=../python/post3/>
-					<div class="text">반복문을 직관적으로(3)</div>
-					
-				</a>
-
-			
-
-				<a class="item" href=../python/post1/>
-					<div class="text">반복문을 직관적으로(1)</div>
-					
-				</a>
-
-			
-			</div>
+	<li class="item"> Python</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/002_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%942/> 이터러블-제너레이터(2)</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/003_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%943/> 이터러블-제너레이터(3)</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/001_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%941/> 이터러블-제너레이터(1)</a></li>
+	</ul>
+</ul>
+</div>
 
 
-			
-			</div>
-			</div>
+<footer>
+	<div class="section" id="section1">
+		[ PROGRAMING DIARY ]
+	</div>
+	<div class="section" id="section2">
+		<div class="icon-wrap" onclick="sendMail()">
+		<div class="icon svg-ajax" id="icon-mail">/img/mail.svg
+		</div></div>
 
+		<div class="icon-wrap" onclick="openGithub()">
+		<div class="icon svg-ajax" id="icon-github">/img/github.svg
+		</div></div>
+		CONCAT ... $
+	</div>
+</footer>
+
+
+
+		</aside>
 		<main id="app-content">
-			<div class="content-wrap">
+		<article id="app-content-wrap">
 			
-  <article>
-    <h1>Tags</h1>
+<article class="post">
+	<div class="post-header">
+		<h1 class ="post-title">Tags</h1>
+		<div class="post-meta">
+	</div>
     <ul class="posts-list">
       
     </ul>
@@ -150,9 +91,9 @@
 
 
 
-  </article>
+</article>
 
-			</div>
+		</article>
 		</main>
 	</body>
 

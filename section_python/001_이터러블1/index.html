@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+	<head>
+		<title>이터러블-제너레이터(1) //  [ 프로그래밍 일기장 ] </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		
+		
+		<link rel="stylesheet" href="https://ghfkddorl.github.io/css/main.css"/>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?delayStartupUntil=configured"></script>
+		<script type="text/javascript" src="https://ghfkddorl.github.io/js/main.js"></script>
+	</head>
+
+	<body onload="onload()">
+		<div id="app-sidebtn"
+			onclick="openSidebar()">
+			~$ tree content
+		</div>
+		<aside id="app-sidebar">
+			
+<header>
+	<div class="icon-wrap" onclick="closeSidebar()">
+	<div class="icon svg-ajax" id="icon-close">/img/close.svg</div>
+	</div>
+	~ $ tree content
+</header>
+
+<div class="menu-wrap">
+<ul class="menu">
+	<li class="item"> Django</li>
+	<ul class="sub-menu"></ul>
+
+	<li class="item"> Hugo And Blog</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/003_html_md_%EB%A6%AC%EC%86%8C%EC%8A%A4%EB%A1%9C/> HTML MD 파일은 리소스로 사용하기</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/001_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%BD%94%EB%93%9C%EB%84%A3%EA%B8%B0/post1/> 마크마운 : 코드 넣기</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/002_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%88%98%EC%8B%9D%EB%84%A3%EA%B8%B0/> 마크다운 : 수식 넣기</a></li>
+	</ul>
+
+	<li class="item"> ML</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_machine_learning/001_gd/> 제약이 있는 경사하강법</a></li>
+	</ul>
+
+	<li class="item"> Python</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/002_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%942/> 이터러블-제너레이터(2)</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/003_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%943/> 이터러블-제너레이터(3)</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/001_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%941/> 이터러블-제너레이터(1)</a></li>
+	</ul>
+</ul>
+</div>
+
+
+<footer>
+	<div class="section" id="section1">
+		[ PROGRAMING DIARY ]
+	</div>
+	<div class="section" id="section2">
+		<div class="icon-wrap" onclick="sendMail()">
+		<div class="icon svg-ajax" id="icon-mail">/img/mail.svg
+		</div></div>
+
+		<div class="icon-wrap" onclick="openGithub()">
+		<div class="icon svg-ajax" id="icon-github">/img/github.svg
+		</div></div>
+		CONCAT ... $
+	</div>
+</footer>
+
+
+
+		</aside>
+		<main id="app-content">
+		<article id="app-content-wrap">
+			
+  <article class="post">
+    <div class="post-header">
+      <h1 class ="post-title">이터러블-제너레이터(1)</h1>
+      <div class="post-meta">
+        <div class="post-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 6, 2019
+        </div>
+        <div class="post-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div></div>
+    </div>
+
+    
+	<div class="post-content">
+	  
+
+<h2 id="1-이터러블-iterable-이터레이터-iterator">1. 이터러블(iterable), 이터레이터(iterator)</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> string <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;hello&#39;</span>, <span style="color:#e6db74">&#39;thank you&#39;</span>, <span style="color:#e6db74">&#39;and you&#39;</span>]:
+    <span style="color:#66d9ef">print</span>(string)</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-result" data-lang="result"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-result" data-lang="result">&#39;hello&#39;
+&#39;thank you&#39;
+&#39;and you&#39;</code></pre></td></tr></table>
+</div>
+</div>
+<p>위 코드는 파이썬을 이용한 간단한 반복문 입니다. 파이썬에서 반복문은 <code>for in</code>문과 <code>while</code>문이 있습니다. 그 중 <code>for in</code>문은 뒤에 <code>list</code>, <code>range</code>, <code>tuple</code>, <code>set</code>, <code>dictionary</code> 등이 옵니다. 그리고 반복문 안에서 해당 객체 안에 든 값을 차례대로 받습니다. 위 코드에서는 &ldquo;hello&rdquo;, &ldquo;thank you&rdquo;, &ldquo;and you&rdquo; 값을 차례대로 받았습니다. 이렇게 객체 안의 값을 차례대로 받는 것을 객체를 <u>순환한다</u>고(iterate) 합니다. 그리고 이렇게 받은 값을 <u>순환값</u>, 순환 가능한 객체를 <u>이터러블(iterable)</u> 이라고 합니다.</p>
+
+<p>이터러블을 언어적 수준에서 지원해 주지 않는 다른 언어를 먼저 접하신 분들이라면 이터러블을 처음 접했을 시 정말 놀랐을 겁니다(저는 그랬습니다.). 이터러블은 코드를 정말 직관적이고 짧게 만들어 줍니다. 그리고 이터러블을 지원하는 다른 언어들이 그렇듯이 파이썬 또한 이터러블 객체를 직접 만들 수 있습니다. 그렇기 위해서 우선 <code>for in</code>문에서 객체를 어떻게 순환하는지 알아야 합니다.</p>
+
+<p>우선 <code>for in</code>문은 순환할 객체의 <code>__iter__</code> 메소드를 호출합니다. <code>__iter__</code>메소드는 <code>__next__</code> 메소드를 가지고 있는 객체를 반환합니다. 이렇게 반환된 객체는 반복문이 반복될때마다 <code>__next__</code> 메소드를 호출합니다. 그리고 <code>__next__</code> 메소드의 반환값이 순환값으로 사용됩니다. 이터레이터는 더이상 순환할 값이 없을 경우 <code>StopIteration</code> 에러를 일으킵니다. <code>for in</code> 문은 이를 감지하고 반복문을 마칩니다.</p>
+
+<p>즉, 파이썬에서 이터러블 객체는 <code>__iter__</code> 이 정의된 객체를 말합니다. 그리고 <code>__next__</code> 이 정의된 객체를 <u>이터레이터</u>라고 합니다. 이는 상속구조로 정의되는 것이 아니라 메소드의 유무로 결정되는 덕타이핑(duck-typing) 입니다. 이 과정에 맞추어 흔히들 쓰는 ragne 클래스를 구현하면 다음과 같습니다.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyRange</span>:
+	<span style="color:#66d9ef">def</span> __init__(self, max):
+		self<span style="color:#f92672">.</span>max
+
+	<span style="color:#66d9ef">def</span> __iter__(self):
+		<span style="color:#66d9ef">return</span> MyRangeIterator(self<span style="color:#f92672">.</span>max)
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyRangeIterator</span>:
+	<span style="color:#66d9ef">def</span> __init__(self, num):
+		self<span style="color:#f92672">.</span>max <span style="color:#f92672">=</span> max
+		self<span style="color:#f92672">.</span>current <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+	
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__next__</span>(self):
+		self<span style="color:#f92672">.</span>current <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+		<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>current <span style="color:#f92672">&gt;=</span> num:
+			<span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopIteration</span>
+		<span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>current
+
+	<span style="color:#66d9ef">def</span> __iter__(self):
+		<span style="color:#66d9ef">return</span> self
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> MyRange(<span style="color:#ae81ff">5</span>):
+	<span style="color:#66d9ef">print</span>(i)</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-result" data-lang="result"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-result" data-lang="result">0
+1
+2
+3
+4</code></pre></td></tr></table>
+</div>
+</div>
+<p>코드를 보시면 아시겠지만 <code>__next__</code>메소드가 <code>StopIteration</code>을 일으키면 이터레이터 객체는 더 이상 값을 순환하지 않습니다. 즉 사용하는 의미가 없어집니다. 재사용이 불가능합니다. 한번더 값을 순환하고 싶으면 이터러블로 부터 새로운 이터레이터를 얻어야 합니다. 그렇기 때문에 순환하는 특징이 필요한 클래스는 이터레이터가 아닌 이터러블을 전달값을 받고 받은 이터러블에서 이터레이터를 얻습니다.</p>
+
+<p>또 다른 특징으로는 이터레이터 또한 <code>__iter__</code> 메소드가 정의되어있고 스스로를 반환합니다. 이는 위에서 말한 순환하는 특징이 필요한 클래스에 이터레이터 객체도 사용할 수 있게 해줍니다. 또한 이러한 특징을 필요로 하는 클래스는 대부분 이터레이터 입니다. 이는 다음과 같은 사용을 가능하게 해줍니다.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-code" data-lang="code"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-code" data-lang="code">for i in filter(lambda i, x: i % 2 == 0, enumerate(range(6))):
+    print(i)</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-result" data-lang="result"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-result" data-lang="result">0
+2
+4</code></pre></td></tr></table>
+</div>
+</div>
+	</div>
+	
+	<div id="disqus-wrap">
+	<div id="disqus_thread"></div>
+	</div>
+
+<script>
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://https-ghfkddorl-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+	
+</article>
+
+
+		</article>
+		</main>
+	</body>
+
+</html>

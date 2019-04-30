@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on  [ 프로그래밍 일기장 ] </title>
+    <link>https://ghfkddorl.github.io/section_python/</link>
+    <description>Recent content in Python on  [ 프로그래밍 일기장 ] </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Apr 2019 01:36:37 +0900</lastBuildDate>
+    
+	<atom:link href="https://ghfkddorl.github.io/section_python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>이터러블-제너레이터(2)</title>
+      <link>https://ghfkddorl.github.io/section_python/002_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%942/</link>
+      <pubDate>Sat, 06 Apr 2019 01:48:30 +0900</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/section_python/002_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%942/</guid>
+      <description>파이썬은 itertools, functools 모듈과 내장 클래스를 통해 이터러블을 순환하는 다양한 방법을 제공합니다. 이 중 개인적으로 많이 사용하는 기능을 모아 정리했습니다. itertools, functo</description>
+    </item>
+    
+    <item>
+      <title>이터러블-제너레이터(3)</title>
+      <link>https://ghfkddorl.github.io/section_python/003_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%943/</link>
+      <pubDate>Sat, 06 Apr 2019 01:48:29 +0900</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/section_python/003_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%943/</guid>
+      <description>이터러블을 구현하다 보면 실제 기능은 대부분 이터레이터에서 구현하고 이터러블 객체는 단순히 이터레이터를 초기화 하기위해 필요한 값만 전달해 줍니다. 클래스를 하</description>
+    </item>
+    
+    <item>
+      <title>이터러블-제너레이터(1)</title>
+      <link>https://ghfkddorl.github.io/section_python/001_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%941/</link>
+      <pubDate>Sat, 06 Apr 2019 01:48:25 +0900</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/section_python/001_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%941/</guid>
+      <description>1. 이터러블(iterable), 이터레이터(iterator) 1 2 for string in [&amp;#39;hello&amp;#39;, &amp;#39;thank you&amp;#39;, &amp;#39;and you&amp;#39;]: print(string) 1 2 3 &amp;#39;hello&amp;#39; &amp;#39;thank you&amp;#39; &amp;#39;and you&amp;#39; 위 코드는 파이썬을 이용한 간단한 반복문 입니다</description>
+    </item>
+    
+  </channel>
+</rss>

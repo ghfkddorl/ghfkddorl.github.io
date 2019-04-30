@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>content root on  &lt; 프로그래밍 일기장 &gt; </title>
+    <title>content root on  [ 프로그래밍 일기장 ] </title>
     <link>https://ghfkddorl.github.io/</link>
-    <description>Recent content in content root on  &lt; 프로그래밍 일기장 &gt; </description>
+    <description>Recent content in content root on  [ 프로그래밍 일기장 ] </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Apr 2019 01:36:28 +0900</lastBuildDate>
@@ -12,47 +12,65 @@
     
     
     <item>
-      <title>반복문을 직관적으로(2)</title>
-      <link>https://ghfkddorl.github.io/python/post2/</link>
+      <title>제약이 있는 경사하강법</title>
+      <link>https://ghfkddorl.github.io/section_machine_learning/001_gd/</link>
+      <pubDate>Sun, 14 Apr 2019 23:20:53 +0900</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/section_machine_learning/001_gd/</guid>
+      <description>1. 경사하강법 임의의 점에서 시작하여 기울기가 가장 급격한 방향으로 이동하여 임의의 함수 $f$의 극소점에 도달하는 방법을 경사하강법이라고 합니다. 간단하게 다</description>
+    </item>
+    
+    <item>
+      <title>HTML MD 파일은 리소스로 사용하기</title>
+      <link>https://ghfkddorl.github.io/section_hugo/003_html_md_%EB%A6%AC%EC%86%8C%EC%8A%A4%EB%A1%9C/</link>
+      <pubDate>Fri, 12 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/section_hugo/003_html_md_%EB%A6%AC%EC%86%8C%EC%8A%A4%EB%A1%9C/</guid>
+      <description>휴고는 렌더링시 페이지 번들 안에 있는 인덱스 파일은 제회한 다른 html 파일과 md 파일을 렌더링 해주지 않습니다. 페이지 번들 안에 있는 다른 파일들은 렌더링된 페이지파일</description>
+    </item>
+    
+    <item>
+      <title>이터러블-제너레이터(2)</title>
+      <link>https://ghfkddorl.github.io/section_python/002_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%942/</link>
       <pubDate>Sat, 06 Apr 2019 01:48:30 +0900</pubDate>
       
-      <guid>https://ghfkddorl.github.io/python/post2/</guid>
+      <guid>https://ghfkddorl.github.io/section_python/002_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%942/</guid>
       <description>파이썬은 itertools, functools 모듈과 내장 클래스를 통해 이터러블을 순환하는 다양한 방법을 제공합니다. 이 중 개인적으로 많이 사용하는 기능을 모아 정리했습니다. itertools, functo</description>
     </item>
     
     <item>
-      <title>반복문을 직관적으로(3)</title>
-      <link>https://ghfkddorl.github.io/python/post3/</link>
+      <title>이터러블-제너레이터(3)</title>
+      <link>https://ghfkddorl.github.io/section_python/003_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%943/</link>
       <pubDate>Sat, 06 Apr 2019 01:48:29 +0900</pubDate>
       
-      <guid>https://ghfkddorl.github.io/python/post3/</guid>
+      <guid>https://ghfkddorl.github.io/section_python/003_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%943/</guid>
       <description>이터러블을 구현하다 보면 실제 기능은 대부분 이터레이터에서 구현하고 이터러블 객체는 단순히 이터레이터를 초기화 하기위해 필요한 값만 전달해 줍니다. 클래스를 하</description>
     </item>
     
     <item>
-      <title>반복문을 직관적으로(1)</title>
-      <link>https://ghfkddorl.github.io/python/post1/</link>
+      <title>이터러블-제너레이터(1)</title>
+      <link>https://ghfkddorl.github.io/section_python/001_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%941/</link>
       <pubDate>Sat, 06 Apr 2019 01:48:25 +0900</pubDate>
       
-      <guid>https://ghfkddorl.github.io/python/post1/</guid>
-      <description>1. 이터러블(iterable), 이터레이터(iterator) code = 1for string in [&amp;#39;hello&amp;#39;, &amp;#39;thank you&amp;#39;, &amp;#39;and you&amp;#39;]: 2 print(string) result = 1&amp;#39;hello&amp;#39; 2&amp;#39;thank you&amp;#39; 3&amp;#39;and you&amp;#39; 위 코드는 파이썬을 이용한 간단한 반복문 입니다</description>
+      <guid>https://ghfkddorl.github.io/section_python/001_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%941/</guid>
+      <description>1. 이터러블(iterable), 이터레이터(iterator) 1 2 for string in [&amp;#39;hello&amp;#39;, &amp;#39;thank you&amp;#39;, &amp;#39;and you&amp;#39;]: print(string) 1 2 3 &amp;#39;hello&amp;#39; &amp;#39;thank you&amp;#39; &amp;#39;and you&amp;#39; 위 코드는 파이썬을 이용한 간단한 반복문 입니다</description>
     </item>
     
     <item>
       <title>마크마운 : 코드 넣기</title>
-      <link>https://ghfkddorl.github.io/hugo/post1/</link>
+      <link>https://ghfkddorl.github.io/section_hugo/001_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%BD%94%EB%93%9C%EB%84%A3%EA%B8%B0/post1/</link>
       <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ghfkddorl.github.io/hugo/post1/</guid>
-      <description>1. 코드 울타리와 인라인 코드 code = 1[comment]: # (this is markdown) 2```python 3import numpy as np 4import matplotlib.pyplot as plt 5x, y = np.random.normal(0.0, 1.0, (2, 100)) 6plt.scatter(x, y) 7plt.show() 8``` result = 1import numpy as np 2import matplotlib.pyplot as plt 3x, y = np.random.normal(0.0, 1.0, (2, 100)) 4plt.scatter(x, y) 5plt.show() 코드 울타리(code fences)</description>
+      <guid>https://ghfkddorl.github.io/section_hugo/001_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%BD%94%EB%93%9C%EB%84%A3%EA%B8%B0/post1/</guid>
+      <description>1. 코드 울타리와 인라인 코드 code = 1 2 3 4 5 6 7 8 [comment]: # (this is markdown) ```python import numpy as np import matplotlib.pyplot as plt x, y = np.random.normal(0.0, 1.0, (2, 100)) plt.scatter(x, y) plt.show() ``` result = 1 2 3 4 5 import numpy as np import matplotlib.pyplot as plt x, y = np.random.normal(0.0, 1.0, (2, 100)) plt.scatter(x,</description>
     </item>
     
     <item>
       <title>마크다운 : 수식 넣기</title>
-      <link>https://ghfkddorl.github.io/hugo/post2/</link>
+      <link>https://ghfkddorl.github.io/section_hugo/002_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%88%98%EC%8B%9D%EB%84%A3%EA%B8%B0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ghfkddorl.github.io/hugo/post2/</guid>
+      <guid>https://ghfkddorl.github.io/section_hugo/002_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%88%98%EC%8B%9D%EB%84%A3%EA%B8%B0/</guid>
       <description>수학적 수식을 표현하기 위해 라텍스(Latex)를 주로 사용합니다. 그리고 Html 에서 라텍스를 쓸 수 있게 해주는 Mathjax 라이브러리가 있습니다. 사용 방법을 일반적인 자</description>
     </item>
     

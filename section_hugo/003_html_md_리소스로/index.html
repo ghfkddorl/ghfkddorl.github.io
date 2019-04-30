@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+	<head>
+		<title>HTML MD 파일은 리소스로 사용하기 //  [ 프로그래밍 일기장 ] </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		
+		
+		<link rel="stylesheet" href="https://ghfkddorl.github.io/css/main.css"/>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?delayStartupUntil=configured"></script>
+		<script type="text/javascript" src="https://ghfkddorl.github.io/js/main.js"></script>
+	</head>
+
+	<body onload="onload()">
+		<div id="app-sidebtn"
+			onclick="openSidebar()">
+			~$ tree content
+		</div>
+		<aside id="app-sidebar">
+			
+<header>
+	<div class="icon-wrap" onclick="closeSidebar()">
+	<div class="icon svg-ajax" id="icon-close">/img/close.svg</div>
+	</div>
+	~ $ tree content
+</header>
+
+<div class="menu-wrap">
+<ul class="menu">
+	<li class="item"> Django</li>
+	<ul class="sub-menu"></ul>
+
+	<li class="item"> Hugo And Blog</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/003_html_md_%EB%A6%AC%EC%86%8C%EC%8A%A4%EB%A1%9C/> HTML MD 파일은 리소스로 사용하기</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/001_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%BD%94%EB%93%9C%EB%84%A3%EA%B8%B0/post1/> 마크마운 : 코드 넣기</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_hugo/002_%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%EC%88%98%EC%8B%9D%EB%84%A3%EA%B8%B0/> 마크다운 : 수식 넣기</a></li>
+	</ul>
+
+	<li class="item"> ML</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_machine_learning/001_gd/> 제약이 있는 경사하강법</a></li>
+	</ul>
+
+	<li class="item"> Python</li>
+	<ul class="sub-menu">
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/002_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%942/> 이터러블-제너레이터(2)</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/003_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%943/> 이터러블-제너레이터(3)</a></li>
+	
+		<li class="sub-item"> <a href=https://ghfkddorl.github.io/section_python/001_%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%941/> 이터러블-제너레이터(1)</a></li>
+	</ul>
+</ul>
+</div>
+
+
+<footer>
+	<div class="section" id="section1">
+		[ PROGRAMING DIARY ]
+	</div>
+	<div class="section" id="section2">
+		<div class="icon-wrap" onclick="sendMail()">
+		<div class="icon svg-ajax" id="icon-mail">/img/mail.svg
+		</div></div>
+
+		<div class="icon-wrap" onclick="openGithub()">
+		<div class="icon svg-ajax" id="icon-github">/img/github.svg
+		</div></div>
+		CONCAT ... $
+	</div>
+</footer>
+
+
+
+		</aside>
+		<main id="app-content">
+		<article id="app-content-wrap">
+			
+  <article class="post">
+    <div class="post-header">
+      <h1 class ="post-title">HTML MD 파일은 리소스로 사용하기</h1>
+      <div class="post-meta">
+        <div class="post-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 12, 2019
+        </div>
+        <div class="post-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </div>
+
+    
+	<div class="post-content">
+	  
+
+<p>휴고는 렌더링시 페이지 번들 안에 있는 인덱스 파일은 제회한 다른 html 파일과 md 파일을 렌더링 해주지 않습니다. 페이지 번들 안에 있는 다른 파일들은 렌더링된 페이지파일과 같은 폴더 안으로 복사되지만 html 파일과 md 파일은 그렇지 않습니다. 버그인지 원래 그런 기능인지는 모르겠지만, 주피터 노트북이나 plotly를 사용하기 위해서 이런 기능이 필요합니다. 따라서 나름 알아본 방법을 적어봅니다.</p>
+
+<h1 id="1-숏코드-이용">1. 숏코드 이용</h1>
+
+<p>우선 숏코드를 이용해 마크다운이나 html 파일을 페이지 파일에 병합하는 방법이 있습니다. 숏코드는 렌더링 되기전의 페이지 파일에 원하는 내용을 넣어줍니다. 따라서 마크다운과 html 파일의 내용을 페이지 파일안에 넣어주는 숏코드를 만듭니다.는 html은 병합하는 숏코드는 아래와 같습니다. 숏코드를정의한 파일의 이름은 숏코드의 이름과 같아야하며, 위치는 당연히 layout/shortcode 파일 안에 있어야 합니다.</p>
+
+<p>아래의 경우 파일이름은 merge_html.html 이며 파일안에 숏코드의 이름은 <code>merge_html</code> 입니다. 이름에 <code>_</code>가 들어가 있는 경우 마크다운에서 <code>_</code>를 특수문자로 사용하기 때문에, 일반글자로 사용하기위해선 <code>\_</code>를 입력해야 합니다. 숏코드로 만들어 지는 태그의 클래스를 <code>short</code>로 지정해준 이유는 MathJax 라이브러리를 이용할 경우 해당 클래스를 MathJax에 예외로 지정해주어야 하기 때문입니다.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- /layout/shortcode/merge_html.html--&gt;</span>
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;shortcode&#39;</span>&gt; 
+{{ with (.Page.Resources.GetMatch (.Get 0)) }}
+	{{ .Content }}
+{{ else }}
+	페이지를 찾지 못했습니다.
+{{ end }}
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">{{&lt; merge\_html &#34;myhtml.html&#34;&gt;}}</code></pre></td></tr></table>
+</div>
+</div>
+<p>마크다운을 병합하는 숏코드 경우 다음과 같습니다.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- /layout/shortcode/merge_md.html--&gt;</span>
+{{ with (.Page.Resources.GetMatch (.Get 0)) }}
+	{{ .Content }}
+{{ else }}
+	페이지를 찾지 못했습니다.
+{{ end }}</code></pre></td></tr></table>
+</div>
+</div>
+<p>이렇게 병합된 마크다운과 html 파일은 렌더링된 폴더에는 존제하지 않습니다.</p>
+
+<h1 id="2-확장자-변경">2. 확장자 변경</h1>
+
+<p>더 간단한 방법으로는 확장자 변경이 있습니다. html 파일의 확장자가 html이 아닐경우 변경될 경우 페이지 번들안에 있는 다른 리소스파일처럼 렌더링된 페이지 곁으로 복사됩니다. 이렇게 할 경우 복사된 html 파일을 <code>&lt;iframes&gt;</code>울 사용해 불러올 수 있습니다. 예를 들어 지금 보고 계신 페이지의 번들 안에는 원래 이름이 plotly.html인 plotly.embed 파일이 있습니다. 아래와 같은 코드를 입력하여 plotly.embed 파일을 불러옵니다.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;plotly.embed&#34;</span> <span style="color:#a6e22e">frameBorder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">100%</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">500erm</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;</code></pre></td></tr></table>
+</div>
+</div>
+<iframe src="plotly.embed" frameBorder="0" width=100% height=500erm></iframe>
+
+	</div>
+	
+	<div id="disqus-wrap">
+	<div id="disqus_thread"></div>
+	</div>
+
+<script>
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://https-ghfkddorl-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+	
+</article>
+
+
+		</article>
+		</main>
+	</body>
+
+</html>

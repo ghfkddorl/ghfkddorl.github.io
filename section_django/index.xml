@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on  [ 프로그래밍 일기장 ] </title>
+    <link>https://ghfkddorl.github.io/section_django/</link>
+    <description>Recent content in Django on  [ 프로그래밍 일기장 ] </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Apr 2019 21:18:01 +0900</lastBuildDate>
+    
+	<atom:link href="https://ghfkddorl.github.io/section_django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
