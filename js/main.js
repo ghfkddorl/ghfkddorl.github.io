@@ -5,15 +5,15 @@ MathJax.Hub.Config({
 					"input/TeX",
 					"input/MathML",
 					"output/HTML-CSS",
-					"output/NativeMML", 
+					"output/NativeMML",
 					"output/PreviewHTML"],
   			extensions: [
 					"tex2jax.js",
 					"mml2jax.js",
 					"MathMenu.js",
-					"MathZoom.js", 
-					"fast-preview.js", 
-					"AssistiveMML.js", 
+					"MathZoom.js",
+					"fast-preview.js",
+					"AssistiveMML.js",
 					"a11y/accessibility-menu.js"],
 
 			tex2jax: {
@@ -23,7 +23,7 @@ MathJax.Hub.Config({
 				processEnvironments: true,
 				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
 				ignoreClass: "gist-file|shortcode|ignore-mathjax",
-				TeX: { 
+				TeX: {
 					equationNumbers: { autoNumber: "AMS" },
 					extensions: ["AMSmath.js", "AMSsymbols.js"] }
 			}
@@ -40,37 +40,6 @@ function emitte_code_info() {
 		div.className = "code-info"
 		div.innerHTML = info
 		code_block.appendChild(div)
-	}
-}
-
-function ajax_svg_replace(ele, url){
-	req = new XMLHttpRequest();
-	req.open("GET", url, false);
-	req.overrideMimeType("images/svg+xml")
-	req.onreadystatechange = function() {
-		if( req.readyState === 4 && req.status === 200 ) {
-			chs = req.responseXML.children
-			node = null;
-			for( let i = 0 ; chs.length; i++ ){
-				if ( chs[i].nodeType === 1 ){
-					node = chs[i]; 
-					break;
-				}
-			}
-			node = document.importNode(node, true);
-			node.className.baseVal = ele.className
-			node.id = ele.id
-			ele.parentNode.replaceChild(node, ele)
-		}
-	};
-	req.send();
-}
-
-function replace_all_ajax_svg(){
-	ajaxs = document.getElementsByClassName("svg-ajax")
-	for( let i=0; i< ajaxs.length; i++ ){
-		ajax = ajaxs[i]
-		ajax_svg_replace(ajax, ajax.innerHTML)
 	}
 }
 
@@ -94,6 +63,4 @@ function openGithub(){
 
 function onload(){
 	emitte_code_info();
-	replace_all_ajax_svg();
 }
-

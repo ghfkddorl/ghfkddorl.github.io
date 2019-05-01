@@ -21,7 +21,7 @@
 			
 <header>
 	<div class="icon-wrap" onclick="closeSidebar()">
-	<div class="icon svg-ajax" id="icon-close">/img/close.svg</div>
+		<svg class="icon"><use href="../../icons.svg#close"></use></svg>
 	</div>
 	~ $ tree content
 </header>
@@ -54,24 +54,16 @@
 </ul>
 </div>
 
-
 <footer>
-	<div class="section" id="section1">
-		[ PROGRAMING DIARY ]
-	</div>
-	<div class="section" id="section2">
-		<div class="icon-wrap" onclick="sendMail()">
-		<div class="icon svg-ajax" id="icon-mail">/img/mail.svg
-		</div></div>
-
-		<div class="icon-wrap" onclick="openGithub()">
-		<div class="icon svg-ajax" id="icon-github">/img/github.svg
-		</div></div>
-		CONCAT ... $
+	<div id="section2">
+		<div id="div1">[ PROGRAMING DIARY?? ]</div>
+		<div class="icon-wrap" id="github" onclick="openGithub()">
+			<svg class="icon"><use href="../../icons.svg#github"></svg></div>
+		<div class="icon-wrap" id="mail" onclick="sendMail()">
+			<svg class="icon"><use href="../../icons.svg#mail"></svg></div>
+		<div id="div2">CONCAT ... $</div>
 	</div>
 </footer>
-
-
 
 		</aside>
 		<main id="app-content">
