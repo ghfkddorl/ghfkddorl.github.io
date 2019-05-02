@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>tf.get_variable()</title>
+      <link>https://ghfkddorl.github.io/section_machine_learning/002_tf1/</link>
+      <pubDate>Wed, 01 May 2019 01:36:37 +0900</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/section_machine_learning/002_tf1/</guid>
+      <description>tf.get_variable()은 Variable을 만들기 전에 같은 이름의 Variable이 있는지 확인할 수 있습니다. tf.variable_</description>
+    </item>
+    
+    <item>
       <title>제약이 있는 경사하강법</title>
       <link>https://ghfkddorl.github.io/section_machine_learning/001_gd/</link>
       <pubDate>Sun, 14 Apr 2019 23:20:53 +0900</pubDate>
