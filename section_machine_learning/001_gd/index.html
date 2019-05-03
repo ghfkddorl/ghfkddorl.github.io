@@ -340,37 +340,65 @@ M &amp; = &amp; \text{semi-orthogonal matrix of } N^\bot \newline
      &amp;&amp; ( M \text{&rsquo;s columns is orthonomal basis of } N^\bot )
 \end{array} $$</p>
 
-<p>$$ \begin{array}{ll} \tag{12}
-v = N \lambda + M u \newline
+$$ \begin{array}{l}
+ \tag{ 12 } 
+
+	
+v = N \lambda + M u \\
 \|\lambda\| + \|u\| = 1, \quad
 \forall i \quad \lambda_i \ge 0
-\end{array} $$</p>
+ 
+\end{array} $$
+
 
 <p>문제(10) 의 $v$를 $\lambda$와 $u$로 치환하면 문제(13)이 됩니다.</p>
 
-<p>$$ \begin{array}{l} \tag{13}
-\min_{\lambda, u} \nabla f^T N \lambda + \nabla f^T M u  \newline
+$$ \begin{array}{l}
+ \tag{ 13 } 
+
+	
+\min_{\lambda, u} \nabla f^T N \lambda + \nabla f^T M u \\
 s.t. \quad
-\|\lambda\| + \|u\| = 1, \quad
-\forall i \quad \lambda_i \ge 0
-\end{array} $$</p>
+	\|\lambda\| + \|u\| = 1, \quad 
+	\forall i \quad \lambda_i \ge 0
+ 
+\end{array} $$
+
 
 <p>아시다시피 이 문제의 답은 아래와 같습니다. k는 크기조절을 위한 값으로 양수 입니다.</p>
 
-<p>$$ \begin{array}{l} \tag{14}
-\lambda_i &amp;=&amp; \begin{cases}
-    0                   &amp; \text{if } -\nabla f^T A_i \le 0 \newline
-    -k \nabla f^T A_i &amp; \text{else }
+$$ \begin{array}{l}
+ \tag{ 14 } 
+
+	
+\lambda_i &=& \begin{cases}
+	0                   & \text{if } -\nabla f^T A_i \le 0 \\
+	-k \nabla f^T A_i & \text{else } 
 \end{cases} \newline
-u_i &amp;=&amp; -k \nabla f^T M_{*,i}
-\end{array} $$</p>
+u_i &=& -k \nabla f^T M_{*,i}
+ 
+\end{array} $$
+
 
 <p>따라서 $v$는 다음과 같습니다.
-$$v = -k \left( \sum_{-\nabla f^T A_i &gt; 0} \{ A_i f^T A_i \} + M M^T \nabla f \right) \tag{15} $$</p>
+$$ \begin{array}{l}
+ \tag{ 15 } 
+
+	
+v = -k \left( \sum_{\nabla -f^T A_i > 0} \{ A_i f^T A_i \} + M M^T \nabla f \right) 
+ 
+\end{array} $$
+</p>
 
 <p>최대화 문제였다면 아래와 같습니다.
-$$v = k \left( \sum_{\nabla f^T A_i &gt; 0} \{ A_i f^T A_i \} + M M^T \nabla f \right) \tag{15-2}
-$$</p>
+$$ \begin{array}{l}
+ \tag{ 15-2 } 
+
+	
+v = k \left( \sum_{\nabla f^T A_i > 0} \{ A_i f^T A_i \} + M M^T \nabla f \right) 
+ 
+\end{array} $$
+</p>
 
 	</div>
 	

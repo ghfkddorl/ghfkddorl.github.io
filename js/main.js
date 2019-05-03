@@ -19,8 +19,7 @@ MathJax.Hub.Config({
 			tex2jax: {
 				inlineMath: [['$','$']],
 				displayMath: [['$$','$$']],
-				processEscapes: true,
-				processEnvironments: true,
+				processEscapes: true, processEnvironments: false,
 				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
 				ignoreClass: "gist-file|shortcode|ignore-mathjax",
 				TeX: {
