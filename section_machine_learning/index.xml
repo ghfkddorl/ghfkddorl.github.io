@@ -21,12 +21,21 @@
     </item>
     
     <item>
+      <title>라그랑주 승수법</title>
+      <link>https://ghfkddorl.github.io/section_machine_learning/003_gd/</link>
+      <pubDate>Wed, 01 May 2019 01:36:37 +0900</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/section_machine_learning/003_gd/</guid>
+      <description>조건식이 있는 최적화 문제에서 정류점을 찾기위해 라그랑주 승수법을 이용합니다. 라그랑주 승수법에 대해 다룬 여러 글들을 보면 정류점에서 조건식과 목적함수의 기울</description>
+    </item>
+    
+    <item>
       <title>제약이 있는 경사하강법</title>
       <link>https://ghfkddorl.github.io/section_machine_learning/001_gd/</link>
       <pubDate>Sun, 14 Apr 2019 23:20:53 +0900</pubDate>
       
       <guid>https://ghfkddorl.github.io/section_machine_learning/001_gd/</guid>
-      <description>1. 경사하강법 임의의 점에서 시작하여 기울기가 가장 급격한 방향으로 이동하여 임의의 함수 $f$의 극소점에 도달하는 방법을 경사하강법이라고 합니다. 간단하게 다</description>
+      <description>1. 경사하강법 경사하강접은 임의의 점에서 시작해 함수의 기울기가 가장 급격한 방향으로 계속해서 이동해 함수의 정류점에 도착하는 방법입니다. 이를 최적화 한다고 합</description>
     </item>
     
   </channel>
