@@ -104,6 +104,8 @@ body {
 #app-content {
   z-index: 0;
   white-space: normal; }
+  #app-content img {
+    width: 100%; }
 
 #app-content-wrap {
   padding: 4ch;

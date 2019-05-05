@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ghfkddorl.github.io/section_machine_learning/002_tf1/</loc>
+    <loc>https://ghfkddorl.github.io/section_machine_learning/004_tf.get_saver/</loc>
+    <lastmod>2019-05-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ghfkddorl.github.io/section_machine_learning/003_tf.get_variable/</loc>
     <lastmod>2019-05-01T01:36:37+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ghfkddorl.github.io/section_machine_learning/003_gd/</loc>
+    <loc>https://ghfkddorl.github.io/section_machine_learning/002_gd/</loc>
     <lastmod>2019-05-01T01:36:37+09:00</lastmod>
   </url>
   

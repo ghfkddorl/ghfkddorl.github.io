@@ -12,20 +12,29 @@
     
     
     <item>
-      <title>tf.get_variable()</title>
-      <link>https://ghfkddorl.github.io/section_machine_learning/002_tf1/</link>
+      <title>tf.train.Saver</title>
+      <link>https://ghfkddorl.github.io/section_machine_learning/004_tf.get_saver/</link>
+      <pubDate>Fri, 03 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ghfkddorl.github.io/section_machine_learning/004_tf.get_saver/</guid>
+      <description>tf.train.Saver를 통해 모델을 저장하거나 불러 올 수 있습니다. Saver가 생성될 때 현재 그래프의 Variable에 save/restore operation 을 추가합니다. save 메</description>
+    </item>
+    
+    <item>
+      <title>tf.get_variable</title>
+      <link>https://ghfkddorl.github.io/section_machine_learning/003_tf.get_variable/</link>
       <pubDate>Wed, 01 May 2019 01:36:37 +0900</pubDate>
       
-      <guid>https://ghfkddorl.github.io/section_machine_learning/002_tf1/</guid>
-      <description>tf.get_variable()은 Variable을 만들기 전에 같은 이름의 Variable이 있는지 확인할 수 있습니다. tf.variable_</description>
+      <guid>https://ghfkddorl.github.io/section_machine_learning/003_tf.get_variable/</guid>
+      <description>tf.get_variable은 Variable을 만들기 전에 같은 이름의 Variable이 있는지 확인할 수 있습니다. tf.variable_sc</description>
     </item>
     
     <item>
       <title>라그랑주 승수법</title>
-      <link>https://ghfkddorl.github.io/section_machine_learning/003_gd/</link>
+      <link>https://ghfkddorl.github.io/section_machine_learning/002_gd/</link>
       <pubDate>Wed, 01 May 2019 01:36:37 +0900</pubDate>
       
-      <guid>https://ghfkddorl.github.io/section_machine_learning/003_gd/</guid>
+      <guid>https://ghfkddorl.github.io/section_machine_learning/002_gd/</guid>
       <description>조건식이 있는 최적화 문제에서 정류점을 찾기위해 라그랑주 승수법을 이용합니다. 라그랑주 승수법에 대해 다룬 여러 글들을 보면 정류점에서 조건식과 목적함수의 기울</description>
     </item>
     
